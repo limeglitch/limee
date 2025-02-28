@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محامين شباب مصر ⚖️</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+        
+        body { 
+            font-family: 'Tajawal', sans-serif; 
+            text-align: center; 
+            background-color: #121212; 
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container { 
+            max-width: 400px; 
+            background: rgba(20, 20, 20, 0.95); 
+            padding: 20px; 
+            border-radius: 10px; 
+            box-shadow: 0px 0px 15px #ffcc00; 
+            text-align: center;
+        }
+
+        h2 { 
+            color: #ffcc00; 
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        input, textarea { 
+            width: 100%; 
+            padding: 10px; 
+            margin: 10px 0; 
+            border: 1px solid #ffcc00; 
+            border-radius: 5px; 
+            background: #222; 
+            color: white; 
+            text-align: right;
+        }
+
+        button { 
+            background: #ffcc00; 
+            color: black; 
+            padding: 12px; 
+            border: none; 
+            width: 100%; 
+            cursor: pointer; 
+            font-size: 18px; 
+            border-radius: 5px; 
+            font-weight: bold;
+        }
+
+        button:hover { 
+            background: #d4a300; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>🌙 محامين شباب مصر ⚖️</h2>
+        <p>رمضان كريم! 🌙🏮 احجز استشارتك الآن وسنقوم بالتواصل معك عبر الواتساب!</p>
+        
+        <input type="text" id="name" placeholder="الاسم بالكامل" required>
+        <input type="tel" id="phone" placeholder="رقم الهاتف" required>
+        <textarea id="problem" placeholder="اكتب مشكلتك القانونية هنا..." rows="4" required></textarea>
+        
+        <button onclick="sendToWhatsApp()">📩 إرسال عبر واتساب</button>
+    </div>
+
+    <script>
+        function sendToWhatsApp() {
+            var name = document.getElementById("name").value;
+            var phone = document.getElementById("phone").value;
+            var problem = document.getElementById("problem").value;
+            
+            if(name == "" || phone == "" || problem == "") {
+                alert("يرجى ملء جميع الحقول!");
+                return;
+            }
+            
+            var message = `مرحبًا، اسمي ${name}%0Aرقمي: ${phone}%0Aالمشكلة: ${problem}`;
+            var whatsappURL = `https://wa.me/20113346753?text=${message}`;
+            
+            window.open(whatsappURL, '_blank');
+        }
+    </script>
+
+</body>
+</html>
